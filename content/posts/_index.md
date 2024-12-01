@@ -7,4 +7,4 @@ menu:
     weight: 2
 ---
 
-BILDAD
+about is usually a preposition but often an adverb and sometimes an adjective.
