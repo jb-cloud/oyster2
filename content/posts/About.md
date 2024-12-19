@@ -8,11 +8,12 @@ menu:
 ---
 
 - Every Action & VAN Administration
+- Custom VAN API Integrations
 - Custom Field Reporting
 - Data Visualization
   - Campaign Dashboards
   - Graphs, Charts, Plots
-  - Google Data Studio/Looker Support
+  - Google Data Studio / Looker Studio Support
 - Data Hygiene 
 - GIS Services
   - Custom Mapping
