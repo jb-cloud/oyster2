@@ -118,14 +118,18 @@ p {
   font-size: 18px;
   line-height: 24px; }
 
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-  ol li,
-  ul li {
-    list-style: none; }
+/* Restore list styles */
+ol, ul {
+  margin-left: 1.5rem; /* Adjust as needed */
+  padding-left: 1.5rem; /* Consistent spacing for nested lists */
+  list-style: disc; /* Default style for unordered lists */
+}
+
+/* Ensure nested lists maintain proper indentation */
+ol ul, ul ul, ol ol {
+  margin-left: 1.5rem; /* Further indent nested lists */
+  padding-left: 1.5rem; /* Adjust as needed */
+}
 
 .content {
   font-size: 18px; }
