@@ -53,3 +53,21 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+/* Restore list styles */
+ol, ul {
+  margin-left: 1.5rem; /* Adjust as needed */
+  padding-left: 1.5rem; /* Consistent spacing for nested lists */
+  list-style: disc; /* Default style for unordered lists */
+}
+
+/* Ensure nested lists maintain proper indentation */
+ol ul, ul ul, ol ol {
+  margin-left: 1.5rem; /* Further indent nested lists */
+  padding-left: 1.5rem; /* Adjust as needed */
+}
+
+/* Optional: Restore bullet points for nested lists if removed */
+ol li, ul li {
+  list-style: inherit; /* Inherit list style from parent */
+}
