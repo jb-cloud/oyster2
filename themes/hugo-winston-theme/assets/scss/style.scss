@@ -95,3 +95,14 @@ nav ul li {
   display: list-item; /* Ensure the element behaves as a list item */
   list-style-position: outside; /* Position marker outside text flow */
 }
+
+@media (max-width: 768px) {
+  nav ul {
+      list-style: none; /* Remove markers in mobile menu */
+      padding-left: 0; /* Reset padding */
+  }
+
+  nav ul li {
+      padding-left: 0; /* Align text properly in the hamburger menu */
+  }
+}
