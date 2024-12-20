@@ -81,3 +81,17 @@ nav ul {
 nav ul li {
   padding-left: 10px; /* Adjust as needed */
 }
+
+/* Target list markers and adjust their spacing */
+nav ul li::marker {
+  font-size: 1rem; /* Adjust size to match text */
+  color: currentColor; /* Ensure consistent color */
+  margin-right: 0.5rem; /* Add space between marker and text */
+}
+
+/* Adjust the list item itself for alignment */
+nav ul li {
+  padding-left: 1rem; /* Add padding to create space for the marker */
+  display: list-item; /* Ensure the element behaves as a list item */
+  list-style-position: outside; /* Position marker outside text flow */
+}
