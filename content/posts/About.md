@@ -6,9 +6,9 @@ menu:
     name: "Services"
     weight: 2
 ---
-# Oyster Data provides complete data solutions to progressive campaigns, organizations, and Labor Unions. #
+## Oyster Data provides complete data solutions to progressive campaigns, organizations, and Labor Unions. ##
 
-## Our Capabilities Include ##
+### Our Capabilities Include ###
 
 * Every Action & VAN Administration
 * Custom VAN API Integrations
