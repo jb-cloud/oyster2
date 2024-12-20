@@ -1,21 +1,20 @@
-<div class='header'>
-  <a class="header-logo" href="{{ .Site.Home.RelPermalink }}"><!--{{ .Site.Title }}--></a>
+<div class="header">
+  <a class="header-logo" href="{{ .Site.Home.RelPermalink }}"></a>
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
   <div class="menu-main">
-    <ul>
+    <ul class="menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
       {{ $active = or $active (eq (.URL | relLangURL) ($currentPage.RelPermalink | relLangURL)) }}
       <li class="menu-item-{{ .Name | lower }} {{ if $active }}active{{ end }}">
-        <a href="{{.URL}}">
+        <a href="{{ .URL }}">
           {{ .Pre }}
           <span>{{ .Name }}</span>
         </a>
       </li>
-      {{end}}
+      {{ end }}
     </ul>
-  </div>
-  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
-    <button class="hamburger">Menu</button>
   </div>
 </div>
