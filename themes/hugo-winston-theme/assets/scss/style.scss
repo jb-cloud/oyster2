@@ -138,3 +138,15 @@ nav ul li {
   position: absolute;
   left: -1rem; /* Adjust to align dot with text */
 }
+
+.menu-main > ul {
+  list-style: none; /* Removes default list-style-type dots */
+}
+
+.menu-main > ul > li::before {
+  content: "•";
+  color: var(--dot-color);
+  margin-right: 0.5rem;
+  position: absolute;
+  left: -1rem;
+}
