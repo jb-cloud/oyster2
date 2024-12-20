@@ -106,3 +106,13 @@ nav ul li {
       padding-left: 0; /* Align text properly in the hamburger menu */
   }
 }
+
+.menu-main > ul > li::marker {
+  content: "•"; /* Ensure dots are visible */
+  margin-right: 0.5rem; /* Add spacing between dot and text */
+}
+
+.menu-main > ul > li {
+  padding-left: 1rem; /* Create space for marker alignment */
+  list-style-position: outside; /* Ensure markers are outside text flow */
+}
