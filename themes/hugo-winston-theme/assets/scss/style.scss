@@ -29,66 +29,112 @@ $breakpoints: (
 @import 'main-menu-mobile';
 @import 'pygments/github';
 
-/* Custom Styles for Navigation */
-.menu-main > ul {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1.5rem;
-}
-
-.menu-main > ul > li {
-  position: relative;
-  margin: 0;
-  list-style: none;
-}
-
-.menu-main > ul > li::before {
-  content: "•";
-  color: var(--dot-color);
-  margin-right: 0.5rem;
-  position: absolute;
-  left: -1rem;
-}
-
-.menu-main-mobile {
-  position: fixed;
-  background: var(--highlight-color);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
-  overflow: hidden;
-  display: none;
-  justify-content: center;
-  flex-direction: column;
-
-  &.open {
-    opacity: 1;
-    visibility: visible;
-    height: 100%;
-    z-index: 10;
-    display: flex;
-
-    li {
-      animation: fadeInTop 0.5s ease forwards;
-    }
-  }
-
-  ul {
-    font-size: 2rem;
-    font-family: var(--font-family-heading);
-    text-align: center;
-    list-style: none;
-    margin: 0;
-    flex: 0;
-  }
+html, body {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--base-color);
   font-family: var(--font-family-paragraph);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+  @include breakpoint('small') {
+    padding: 50px;
+  }
+  &.frame {
+    min-height: 100vh;
+    border: 18px solid var(--highlight-color);
+  }
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Restore list styles */
+ol, ul {
+  margin-left: 1.5rem; /* Adjust as needed */
+  padding-left: 1.5rem; /* Consistent spacing for nested lists */
+  list-style: disc; /* Default style for unordered lists */
+}
+
+/* Ensure nested lists maintain proper indentation */
+ol ul, ul ul, ol ol {
+  margin-left: 1.5rem; /* Further indent nested lists */
+  padding-left: 1.5rem; /* Adjust as needed */
+}
+
+/* Optional: Restore bullet points for nested lists if removed */
+ol li, ul li {
+  list-style: inherit; /* Inherit list style from parent */
+}
+
+nav ul {
+  list-style-type: disc; /* or 'circle', 'square', etc., as desired */
+  list-style-position: outside;
+  padding-left: 20px; /* Adjust as needed */
+}
+
+nav ul li {
+  padding-left: 10px; /* Adjust as needed */
+}
+
+/* Target list markers and adjust their spacing */
+nav ul li::marker {
+  font-size: 1rem; /* Adjust size to match text */
+  color: currentColor; /* Ensure consistent color */
+  margin-right: 0.5rem; /* Add space between marker and text */
+}
+
+/* Adjust the list item itself for alignment */
+nav ul li {
+  padding-left: 1rem; /* Add padding to create space for the marker */
+  display: list-item; /* Ensure the element behaves as a list item */
+  list-style-position: outside; /* Position marker outside text flow */
+}
+
+@media (max-width: 768px) {
+  nav ul {
+      list-style: none; /* Remove markers in mobile menu */
+      padding-left: 0; /* Reset padding */
+  }
+
+  nav ul li {
+      padding-left: 0; /* Align text properly in the hamburger menu */
+  }
+}
+
+.menu-main > ul > li::marker {
+  content: "•"; /* Ensure dots are visible */
+  margin-right: 0.5rem; /* Add spacing between dot and text */
+}
+
+.menu-main > ul > li {
+  padding-left: 1rem; /* Create space for marker alignment */
+  list-style-position: outside; /* Ensure markers are outside text flow */
+}
+
+/* Fix for Navigation Dot Alignment */
+.menu-main > ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem; /* Space between navigation items */
+}
+
+.menu-main > ul > li {
+  position: relative;
+  margin: 0;
+  list-style: none; /* Prevent default markers */
+}
+
+.menu-main > ul > li::before {
+  content: "•";
+  color: var(--dot-color); /* Use theme's dot color */
+  margin-right: 0.5rem; /* Space between dot and text */
+  position: absolute;
+  left: -1rem; /* Adjust to align dot with text */
 }
